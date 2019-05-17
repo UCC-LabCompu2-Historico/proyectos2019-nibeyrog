@@ -2,37 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>citogenetica - monitoreo</title>
+    <title>citogen&eacute;tica - monitoreo</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/header.css">
+    <link rel="stylesheet" type="text/css" href="styles/monitoreo.css"
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
 </head>
 <body>
 <header>
-    <img src="img/chromosome.jpeg">
-    <h1> Citogenetica en Leucemia Mieloide Cronica </h1>
+    <div id="title">
+        <img src="img/chromosome.jpeg">
+        <div class="titlename">
+            <h1> Citogen&eacute;tica en Leucemia Mieloide Cr&oacute;nica </h1>
+        </div>
+    </div>
 </header>
 <nav>
-    <div id="navigation">
-        <a href="index.html"> Principal |</a>
-        <a href="historia.html"> Historia </a>
-
-        <ul>
-            <li> <a href="historia.html"> Descubrimiento del cromosoma Philadelphia </a> </li>
-            <li> <a href="historia1.html"> Descubrimiento t(9;22) </a> </li>
-            <li> <a href="historia2.html"> Descubrimiento gen de fusion BCR-ABL1 </a> </li>
-            <li> <a href="historia3.html"> Primer tratamiento con blanco molecular </a> </li>
-        </ul>
-
-        <a href="monitoreo.html"> Monitoreo |</a>
-        <a href="evolucion.html"> Evolucion clonal </a>
+    <div class="navbar">
+        <a href="index.html"> Principal </a>
+        <div class="dropdown">
+            <button class="dropbtn">Historia
+            </button>
+            <div class="dropdown-content">
+                <a href="historia.html"> Descubrimiento del cromosoma Philadelphia </a>
+                <a href="historia1.html"> Descubrimiento t(9;22) </a>
+                <a href="historia2.html"> Descubrimiento gen de fusi&oacute;n BCR-ABL1 </a>
+                <a href="historia3.html"> Primer tratamiento con blanco molecular </a>
+            </div>
+        </div>
+        <a href="monitoreo.html"> Monitoreo </a>
+        <a href="evolucion.html"> Evoluci&oacute;n clonal </a>
     </div>
 </nav>
-<h2> Monitoreo del tratamiento con estudio citogenetico </h2>
-<form id="Monitoreo">
-    Meses de inicado el tratamiento <input type="number" name="meses de iniciado el trataminto" value="12"> <br>
-    Metafases analizadas <input type="number" name="metafases analizadas" min="10" value="20"> <br>
-    Metafases Ph+ <input type="number" name="metafases Ph+" value="0"> <br>
-    <button type="button"> Calcular </button> <br>
-    Respuesta al tratamiento <input type="text" name="respuesta al tratamiento" value="N/A"> <br>
-    Respuesta citogenetica <input type="text" name="respuesta citogenetica" value="N/A"> <br>
-</form>
+<div class="fondo_monitoreo">
+    <h2> Monitoreo del tratamiento con estudio citogen&eacute;tico </h2>
+    <div class="form">
+        <form name="input">
+            Meses de inicado el tratamiento <input type="number" name="meses de iniciado el trataminto" value="12"> <br>
+            Metafases analizadas <input type="number" name="metafases analizadas" min="10" value="20"> <br>
+            Metafases Ph+ <input type="number" name="metafases Ph+" value="0"> <br>
+            <button type="button"> Calcular </button> <br>
+        </form>
+    </div>
+    <hr>
+    <div class="form">
+        <form name="result">
+            Respuesta al tratamiento <input type="text" name="respuesta al tratamiento" value="N/A"> <br>
+            Respuesta citogen&eacute;tica <input type="text" name="respuesta citogen&eacute;tica" value="N/A"> <br>
+        </form>
+    </div>
+</div>
 </body>
 </html>
