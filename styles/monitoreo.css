@@ -43,6 +43,6 @@ hr {
     margin: 2em auto;
     border-width: 2px;
     border-color: #6897af;
-    width: -webkit-fill-available;
+    width: 100%;
     
 }
