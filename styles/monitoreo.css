@@ -1,16 +1,3 @@
-h2 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 2em;
-    margin-bottom: 50px;
-}
-
-.fondo_monitoreo {
-    margin: 1px;
-    padding: 5px 30px;
-    background: #868686;
-}
-
 .form input {
     width: 10%;
     margin: 25px 100px;
@@ -18,22 +5,12 @@ h2 {
     font-size: 16px;
 }
 
-
 .form {
     margin: auto 500px;
     font-size: 20px;
 }
 
-button {
-    background-color: #6897af;
-    border: 2px solid #000000;
-    color: #000000;
-    padding: 7px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
+#monitoreo {
     float: right;
     margin-bottom: 30px;
 }
@@ -44,5 +21,4 @@ hr {
     border-width: 2px;
     border-color: #6897af;
     width: 100%;
-    
 }

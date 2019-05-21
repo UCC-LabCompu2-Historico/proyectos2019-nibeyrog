@@ -1,44 +1,22 @@
-h2 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 2em;
-}
-
-.fondo_evolucion {
-    margin: 1px;
-    padding: 5px 30px;
-    background: #868686;
-}
-
-.texto_evolucion {
-    margin: 15px;
-    padding: 5px 30px;
-    background: #cecece;
-}
-
-.texto_evolucion p {
-    text-align: justify;
-    font-size: 1.2em;
-    font-family: sans-serif;
-}
-
-
 h3 {
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
 }
 
+table {
+    background: #ffffff;
+}
+
 .tabla {
     padding-left: 50px;
 }
 
-.tabla table, tr, td, th{
+.tabla table, tr, td, th {
     border: 1px solid #000000;
     text-align: justify;
     font-size: 1em;
     font-family: sans-serif;
-
 }
 
 #grafico {
