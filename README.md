@@ -2,6 +2,8 @@
 Proyecto para Laboratorio de Computación II, Facultad de Ingeniería,
 Universidad Católica de Córdoba 
 
+[Citogenética en Leucemia Mieloide Crónica - By Nibeyro](https://ucc-labcompu2.github.io/proyectos2019-nibeyrog/index.html)
+
 ## Información general
 Es una página destinada a estudiantes de hematología y/o genética humana,
 que intenta explicar los eventos citogenéticos y moleculares que ocurren en la 
