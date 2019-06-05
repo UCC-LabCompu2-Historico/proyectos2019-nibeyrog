@@ -1,0 +1,26 @@
+h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+table {
+    background: #ffffff;
+}
+
+.tabla {
+    padding-left: 50px;
+}
+
+.tabla table, tr, td, th {
+    border: 1px solid #000000;
+    text-align: justify;
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
+#grafico {
+    display: flex;
+    align-items: center;
+    margin: 30px 33%;
+}

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>citogen&eacute;tica - monitoreo</title>
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/header.css">
-    <link rel="stylesheet" type="text/css" href="styles/monitoreo.css"
+    <link rel="stylesheet" type="text/css" href="styles/monitoreo.css">
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
 </head>
 <body>
@@ -34,14 +34,14 @@
         <a href="evolucion.html"> Evoluci&oacute;n clonal </a>
     </div>
 </nav>
-<div class="fondo_monitoreo">
+<div class="fondo">
     <h2> Monitoreo del tratamiento con estudio citogen&eacute;tico </h2>
     <div class="form">
         <form name="input">
             Meses de inicado el tratamiento <input type="number" name="meses de iniciado el trataminto" value="12"> <br>
             Metafases analizadas <input type="number" name="metafases analizadas" min="10" value="20"> <br>
             Metafases Ph+ <input type="number" name="metafases Ph+" value="0"> <br>
-            <button type="button"> Calcular </button> <br>
+            <button type="button" id="monitoreo"> Calcular </button> <br>
         </form>
     </div>
     <hr>

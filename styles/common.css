@@ -1,0 +1,35 @@
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.fondo {
+    margin: 1px;
+    padding: 5px 30px;
+    background: #868686;
+}
+
+.texto {
+    margin: 15px;
+    padding: 5px 30px;
+    background: #cecece;
+}
+
+.texto p {
+    text-align: justify;
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+
+button {
+    background-color: #6897af;
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 7px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+}
