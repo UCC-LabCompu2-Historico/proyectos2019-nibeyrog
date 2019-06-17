@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles/monitoreo.css">
     <link rel="stylesheet" type="text/css" href="styles/common.css">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
+    <script type="text/javascript" src="functions.js"></script>
 </head>
 <body>
 <header>
@@ -38,17 +39,22 @@
     <h2> Monitoreo del tratamiento con estudio citogen&eacute;tico </h2>
     <div class="form">
         <form name="input">
-            Meses de inicado el tratamiento <input type="number" name="meses de iniciado el trataminto" value="12"> <br>
-            Metafases analizadas <input type="number" name="metafases analizadas" min="10" value="20"> <br>
-            Metafases Ph+ <input type="number" name="metafases Ph+" value="0"> <br>
-            <button type="button" id="monitoreo"> Calcular </button> <br>
+            Meses de inicado el tratamiento <select id="meses" name="respuestaTratamiento">
+            <option value="3"> 3 meses </option>
+            <option value="6"> 6 meses </option>
+            <option value="12" selected="selected"> 12 meses </option>
+            <option value="mas12"> mas de 12 meses </option>
+        </select><br>
+            Metafases analizadas <input id="metafasesAnalizadas" type="number" name="metafases analizadas" min="10" value="20" onchange="alertaMetafases()"> <br>
+            Metafases Ph+ <input id="metafasesPh" type="number" name="metafases Ph+" value="0"> <br>
+            <button type="button" id="monitoreo" onclick="calcularRespuesta()"> Calcular </button> <br>
         </form>
     </div>
     <hr>
     <div class="form">
         <form name="result">
-            Respuesta al tratamiento <input type="text" name="respuesta al tratamiento" value="N/A"> <br>
-            Respuesta citogen&eacute;tica <input type="text" name="respuesta citogen&eacute;tica" value="N/A"> <br>
+            Respuesta al tratamiento <input id="respuestaTratamiento" type="text" name="rTrataminto" value="N/A"> <br>
+            Respuesta citogen&eacute;tica <input id="respuestaCitogenetica" type="text" name="respuesta citogen&eacute;tica" value="N/A"> <br>
         </form>
     </div>
 </div>

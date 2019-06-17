@@ -1,5 +1,13 @@
 .form input {
-    width: 10%;
+    width: 20%;
+    margin: 25px 100px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.form select {
+    height: 25px;
+    width: 20%;
     margin: 25px 100px;
     text-align: left;
     font-size: 16px;
