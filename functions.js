@@ -1,9 +1,10 @@
+//Se dibujara un grafico que establece la relacion entre el cromosoma 9 y el 22, del tipo chord diagram simple
 function dibujarGrafico () {
     var canvas = document.getElementById("graficoLMC");
     var ctx = canvas.getContext("2d");
     var radius = canvas.height / 2;
 
-
+//Dibujo del circulo en canvas
     ctx.fillStyle = "#000";
     ctx.translate(radius, radius);
     radius = radius * 0.90;
@@ -18,6 +19,7 @@ function dibujarGrafico () {
 
 }
 
+//Dibujo de la linea que conecta los cromosomas
 function drawLine (ctx) {
     ctx.resetTransform();
     ctx.moveTo(70,45);
@@ -25,6 +27,7 @@ function drawLine (ctx) {
     ctx.stroke();
 }
 
+//Posicionamiento de los cromosomas alrededor del circulo
 function drawNumbers(ctx, radius) {
     var ang;
     var num;
@@ -54,6 +57,15 @@ function drawNumbers(ctx, radius) {
     }
 }
 
+/**
+ * Descripción
+ * @method calcularRespuesta
+ * @param meses
+ * @param metafasesAnalizadas
+ * @param metafasesPh
+ * @return respuestaC
+ * @return respuestaT
+ */
 function calcularRespuesta () {
 
     var meses = document.getElementById("meses").value;
@@ -63,15 +75,19 @@ function calcularRespuesta () {
     var respuestaC;
     var respuestaT;
 
+    //Se mostrara un mensaje de alerta, ya que las metafases Ph+ no pueden superar las metafases totales, ademas se sale de la funcion y se blanquean los campos
     if (metafasesAnalizadas<metafasesPh) {
-        alert("Los datos ingresados son incorrectos");
+        alert("Los datos ingresados son incorrectos, el total de metafases analizadas debe ser mayor a la cantidad de metafases Ph+");
+        document.getElementById("metafasesAnalizadas").value = " ";
+        document.getElementById("metafasesPh").value = " ";
         return;
     }
 
     porcentajePh = metafasesPh*100/metafasesAnalizadas;
 
+    //En base a los porcentajes de metafases Ph+ se calcula la respuesta citogenetica
     if (porcentajePh == 0) {
-        respuestaC = "RCC";
+        respuestaC = "RCCompleta";
     }
     else if (porcentajePh < 36) {
         respuestaC = "RCMayor";
@@ -88,6 +104,7 @@ function calcularRespuesta () {
 
     document.getElementById("respuestaCitogenetica").value = respuestaC;
 
+    //En base al porcentaje de metafases Ph+ y los meses que hace que el paciente inicio su tratamiento, se evalua la respuesta global
     if (meses == 3) {
         if (porcentajePh < 36) {
             respuestaT = "Optima";
@@ -122,12 +139,13 @@ function calcularRespuesta () {
     document.getElementById("respuestaTratamiento").value = respuestaT;
 }
 
+//Se mostrara un cartel de alerta cuando la cantidad de metafases sea menor que la recomendada, pero se calcularan de todos modos las respuestas
 function alertaMetafases () {
 
     var metafasesAnalizadas = document.getElementById("metafasesAnalizadas").value;
 
     if (metafasesAnalizadas<20) {
-        alert("La cantidad de metafases recomendada es mayor igual a 20");
+        alert("La cantidad de metafases recomendada es mayor igual a 20, es posible que el resultado no sea representativo");
     }
 
 }
