@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles/principal.css">
     <link rel="stylesheet" type="text/css" href="styles/common.css">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
+    <script type="text/javascript" src="functions.js"></script>
 </head>
 <body>
 <header>
@@ -43,8 +44,12 @@
             crisis blástica; cada una de ellas con características clínicas, patológicas y pronósticas bien definidas.
         </p>
     </div>
-    <canvas></canvas>
-    <button type="button" id="principal"> LMC </button> <br>
+    <div class="canvas">
+    <canvas id="graficoLMC" class="LMC" height="200" width="200">
+        Tu navegador no soporta el tag de HTML5 canvas.
+    </canvas>
+    </div>
+    <button type="button" id="principal" onclick="dibujarGrafico()"> LMC </button> <br>
 </div>
 </body>
 </html>
