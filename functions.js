@@ -1,10 +1,14 @@
-//Se dibujara un grafico que establece la relacion entre el cromosoma 9 y el 22, del tipo chord diagram simple
+/**
+ * Se dibujara un grafico que establece la relacion entre el cromosoma 9 y el 22, del tipo chord diagram simple
+ * @method dibujarGrafico
+ * @return void
+ */
 function dibujarGrafico () {
     var canvas = document.getElementById("graficoLMC");
     var ctx = canvas.getContext("2d");
     var radius = canvas.height / 2;
 
-//Dibujo del circulo en canvas
+    //Dibujo del circulo en canvas
     ctx.fillStyle = "#000";
     ctx.translate(radius, radius);
     radius = radius * 0.90;
@@ -14,20 +18,61 @@ function dibujarGrafico () {
     ctx.beginPath();
     ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 2-35, 0, 2 * Math.PI);
     ctx.fill();
-    drawLine(ctx);
+    ctx.stroke();
+    drawingDelay(ctx);
     ctx.closePath();
 
 }
 
-//Dibujo de la linea que conecta los cromosomas
-function drawLine (ctx) {
+/**
+ * Dibujo de la linea que conecta los cromosomas dentro del canvas
+ * @param {canvas} ctx
+ * @method calcularRespuesta
+ * @return void
+ */
+function drawLine(ctx) {
     ctx.resetTransform();
     ctx.moveTo(70,45);
     ctx.lineTo(145,145);
     ctx.stroke();
 }
 
-//Posicionamiento de los cromosomas alrededor del circulo
+/**
+ * Cambia de color la linea dentro del canvas
+ * @param {canvas} ctx
+ * @method lineColorChange
+ * @return void
+ */
+function lineColorChange(ctx) {
+    if(ctx.strokeStyle == "#ac01a0"){
+        ctx.strokeStyle = "#000000";
+    } else {
+        ctx.strokeStyle = "#ac01a0";
+    }
+    ctx.resetTransform();
+    ctx.moveTo(70,45);
+    ctx.lineTo(145,145);
+    ctx.stroke();
+}
+
+/**
+ * Retardo agregado
+ * @param {canvas} ctx
+ * @method drawingDelay
+ * @return void
+ */
+function drawingDelay(ctx) {
+    setTimeout(() => drawLine(ctx), 1000);
+    setInterval(() => lineColorChange(ctx), 3000);
+}
+
+/**
+ * Posicionamiento de los cromosomas alrededor del circulo
+ * @param {canvas} ctx
+ * @param {Number} radius
+ * @method drawNumbers
+ * @return void
+ */
 function drawNumbers(ctx, radius) {
     var ang;
     var num;
@@ -58,13 +103,10 @@ function drawNumbers(ctx, radius) {
 }
 
 /**
- * Descripción
+ * utilizando los campos del formulario meses, metafasesAnalizadas y metafasesPh calcular mediante una formula los
+ * los valores de los campos respuestaCitogenetica y respuestaTratamiento y actualizarlos
  * @method calcularRespuesta
- * @param meses
- * @param metafasesAnalizadas
- * @param metafasesPh
- * @return respuestaC
- * @return respuestaT
+ * @return void
  */
 function calcularRespuesta () {
 
@@ -135,11 +177,16 @@ function calcularRespuesta () {
             respuestaT = "Optima";
         }
     }
-
+    
     document.getElementById("respuestaTratamiento").value = respuestaT;
 }
 
-//Se mostrara un cartel de alerta cuando la cantidad de metafases sea menor que la recomendada, pero se calcularan de todos modos las respuestas
+/**
+ * Se mostrara un cartel de alerta cuando la cantidad de metafases sea menor que la recomendada, pero se calcularan de
+ * todos modos
+ * @method drawNumbers
+ * @return void
+ */
 function alertaMetafases () {
 
     var metafasesAnalizadas = document.getElementById("metafasesAnalizadas").value;
@@ -147,5 +194,4 @@ function alertaMetafases () {
     if (metafasesAnalizadas<20) {
         alert("La cantidad de metafases recomendada es mayor igual a 20, es posible que el resultado no sea representativo");
     }
-
 }
